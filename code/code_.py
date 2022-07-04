@@ -83,8 +83,10 @@ class youtube_Downloader():
     def baixar_video(self):
         try:
             self.jan_de_aviso.destroy()
+
         except:
             pass
+        
         self.url = self.link_video_Entry.get()
 
         if self.url == '' :
@@ -95,6 +97,7 @@ class youtube_Downloader():
                 self.youtube = YouTube(self.url)
                 self.video = self.youtube.streams.get_highest_resolution()
                 self.video.download()
+
             except:
                 self.janela_de_mensagem()
     
