@@ -1,6 +1,9 @@
 from tkinter import *
 
-class frontEnd():
+class backEnd():
+    pass
+
+class frontEnd(backEnd):
     def __init__(self):
         self.front = Tk()
 
@@ -18,7 +21,7 @@ class frontEnd():
         ###creating###
         self.powered_label = Label(
             self.front,
-            text='Powered By Higor Ramos',
+            text='Created By Higor Ramos',
             bg='gray'
         )
         self.link_label = Label(
@@ -27,6 +30,14 @@ class frontEnd():
             bg='gray'
         )
         self.link_video_Entry = Entry(self.front)
+
+        self.baixar_Link_Button = Button(
+            self.front,
+            text='Baixar',
+            command=quit,
+            height=3,
+            width=15
+        )
 
         ###inserting###
         self.powered_label.place(
@@ -42,6 +53,10 @@ class frontEnd():
             y=300,
             width=350,
             height=30
+        )
+        self.baixar_Link_Button.place(
+            x=185,
+            y=410
         )
 
 frontEnd()
