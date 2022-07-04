@@ -1,7 +1,7 @@
 from tkinter import *
 from pytube import YouTube
 
-class frontEnd():
+class youtube_Downloader():
     def __init__(self):
         self.front = Tk()
 
@@ -62,11 +62,11 @@ class frontEnd():
 
         self.jan_de_aviso.geometry('210x80')
 
-        self.link_nao_inserido_label = Label(
+        self.link_invalido = Label(
             self.jan_de_aviso,
-            text='Link não selecionado'
+            text='Link inválido, insira um link válido'
         )
-        self.link_nao_inserido_label.pack()
+        self.link_invalido.pack()
 
         self.ok_button = Button(
             self.jan_de_aviso,
@@ -91,9 +91,11 @@ class frontEnd():
             self.janela_de_mensagem()
 
         else:
-            self.youtube = YouTube(self.url)
-            self.pegar_link()
-            self.video = self.youtube.streams.get_highest_resolution()
-            self.video.download()
+            try:
+                self.youtube = YouTube(self.url)
+                self.video = self.youtube.streams.get_highest_resolution()
+                self.video.download()
+            except:
+                self.janela_de_mensagem()
     
-frontEnd()
+youtube_Downloader()
