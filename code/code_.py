@@ -15,14 +15,33 @@ class frontEnd():
         self.front.config(background='gray')
     
     def primera_Tela_Widgets(self):
+        ###creating###
         self.powered_label = Label(
             self.front,
             text='Powered By Higor Ramos',
             bg='gray'
-            )
-        self.powered_label.place(x=170, y=580)
-
+        )
+        self.link_label = Label(
+            self.front,
+            text='Link do YouTube:',
+            bg='gray'
+        )
         self.link_video_Entry = Entry(self.front)
-        self.link_video_Entry.place(x=100, y=300)
+
+        ###inserting###
+        self.powered_label.place(
+            x=170,
+            y=580
+        )
+        self.link_label.place(
+            x=70,
+            y=280
+        )
+        self.link_video_Entry.place(
+            x=70,
+            y=300,
+            width=350,
+            height=30
+        )
 
 frontEnd()
